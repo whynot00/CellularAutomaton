@@ -55,7 +55,33 @@
 <details>
   <summary>Лабиринты:</summary>
   
+  Обычный лабиринт (B3/S12345), заполнение ~90%
+  
+![Лабиринт](https://github.com/whynot00/CellularAutomaton/assets/26331860/aca1bdd7-6141-4c0d-ad8a-fbebdd6b6df5)
 
+  Лабиринт с мышами (мигалками) (B37/S1234)
+  
+![Лабиринт с мышами](https://github.com/whynot00/CellularAutomaton/assets/26331860/f136acff-74a1-43db-a35d-a55561f36872)
+
+</details>
+
+</details>
+
+<details>
+  <summary>Ковер:</summary>
+  
+  Одна и разновидностей ковров (B234678/S8)
+  
+![Ковер](https://github.com/whynot00/CellularAutomaton/assets/26331860/26e4e33b-182f-4a50-9c74-f8db206d206b)
+
+</details>
+
+<details>
+  <summary>Фрактал:</summary>
+  
+  Простейшая разновидность фрактала, который можно сгенерировать (B1/S012345678)
+  
+![Фрактал](https://github.com/whynot00/CellularAutomaton/assets/26331860/a89da39c-1af4-4189-80b8-2d89a2ce10b9)
 
 
 </details>
