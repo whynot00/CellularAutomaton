@@ -23,7 +23,7 @@ class MainWindow:
 
         gamefield.init()
 
-        gamefield.set_random(100, 40)
+        # gamefield.set_random(100, 40)
 
         events(gamefield)
 
