@@ -1,4 +1,4 @@
-import pygame, time
+import pygame, time, random
 
 class RectCell:
 
@@ -46,7 +46,9 @@ class RectCell:
 class GameField:
 
     def __init__(self, screen):
-
+        
+        self.random_flag = False
+        
         self.screen = screen
         self.screen_size = self.screen.get_size()
 
@@ -59,8 +61,8 @@ class GameField:
 
     def init(self):
 
-        self.cell_count_height = int(self.screen_size[1] // (self.height + self.margin / 2))
-        self.cell_count_width = int(self.screen_size[0] // (self.width + self.margin / 2))
+        self.cell_count_height = int(self.screen_size[1] // (self.height + self.margin))
+        self.cell_count_width = int(self.screen_size[0] // (self.width + self.margin))
         self.gamefield_lst = [[] for x in range(self.cell_count_height)]
 
         for row in range(self.cell_count_height):
@@ -94,6 +96,7 @@ class GameField:
 
         row = x // (self.width + self.margin)
         column = y // (self.height + self.margin)
+
         self.gamefield_lst[column][row].set_live()
 
     def counting_cells(self):
@@ -145,3 +148,26 @@ class GameField:
             for item in row:
                 item.delete_live() 
 
+    def set_random(self, per_cover, per_fill):
+        
+        self.random_flag = True
+
+        self.per_cover = per_cover
+        self.per_fill = per_fill
+
+        lst_ln = len(self.gamefield_lst)
+
+        start = int(lst_ln // 2 - (lst_ln // 2 * (per_cover / 100)))
+        end = int(lst_ln // 2 + (lst_ln // 2 * (per_cover / 100)))
+
+        fill_quantity = int((end - start) ** 2 * (per_fill / 100))
+
+        while fill_quantity > 0:
+            row = random.randint(start, end - 1)
+            col = random.randint(start, end - 1)
+
+            if not self.gamefield_lst[row][col].is_live:
+                self.gamefield_lst[row][col].create_live()
+                fill_quantity -= 1
+
+        pygame.display.update()

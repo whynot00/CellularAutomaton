@@ -21,6 +21,11 @@ def events(gamefield):
                 if event.key == pygame.K_ESCAPE:
                     gamefield.set_default()
 
+                if event.key == pygame.K_r:
+                    if gamefield.random_flag:
+                        gamefield.set_default()
+                        gamefield.set_random(gamefield.per_cover, gamefield.per_fill)
+
         if not gaming_loop:
 
             gamefield.counting_cells()
