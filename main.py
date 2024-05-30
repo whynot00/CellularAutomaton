@@ -18,8 +18,8 @@ class MainWindow:
 
         gamefield.set_rules([3], [2,3])
 
-        gamefield.set_cell_size(10)
-        gamefield.set_game_speed(1)
+        # gamefield.set_cell_size(10)
+        # gamefield.set_game_speed(1)
 
         gamefield.init()
 
